@@ -14,9 +14,21 @@ services:
       - "80:80"  
     networks:
       - mi_fullstack_01
+  database_postgres_01:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: will
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: sistema_pagos
+    ports:
+      - "5432:5432"
+    networks:
+      - mi_fullstack_01
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
       
 networks:
   mi_fullstack_01:
-    external: true
+    driver: bridge
 
 

@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-toolbar>
+    <button (click)="agregarPago()" mat-raised-button style="background-color: blue; color: aliceblue;">agrgar pago</button>
+  </mat-toolbar>
+  <mat-card >
+    <mat-card-header>
+          <mat-card-title>
+            Pago
+          </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+            <table   mat-table [dataSource]="pagosDataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef >Id</th>
+                <td mat-cell *matCellDef="let pago">{{pago.id}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="fecha">
+                <th mat-header-cell *matHeaderCellDef >Fecha</th>
+                <td mat-cell *matCellDef="let pago">{{pago.fecha}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="cantidad">
+                <th mat-header-cell *matHeaderCellDef >Monto</th>
+                <td mat-cell *matCellDef="let pago">{{pago.cantidad}}</td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef >tipo</th>
+                <td mat-cell *matCellDef="let pago">{{pago.tipopagao}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef >estatus</th>
+                <td mat-cell *matCellDef="let pago">{{pago.pagosstatus}}</td>
+              </ng-container>
+
+               <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef >Estudiante</th>
+                <td mat-cell *matCellDef="let pago">{{pago.studentid.name}}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
+

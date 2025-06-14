@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  backend_spreed_01:
+    build: 
+      context: ./sistema-pagos-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - mi_fullstack_01
+  frontend_angular_01:
+    build: 
+      context: ./sistema-pagos-frontend
+    ports:
+      - "80:80"  
+    networks:
+      - mi_fullstack_01
+      
+networks:
+  mi_fullstack_01:
+    external: true
+
+

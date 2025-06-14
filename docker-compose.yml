@@ -30,5 +30,7 @@ services:
 networks:
   mi_fullstack_01:
     driver: bridge
+volumes:
+  postgres_data: 
 
 
